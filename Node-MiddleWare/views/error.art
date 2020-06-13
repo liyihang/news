@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>出错啦……</title>
+</head>
+<style>
+.err{
+    height:100%;
+    width:100%;
+    position:absolute;
+    top:0;
+    left:0;
+}
+.err404{
+    background: url('/asset/404.png') no-repeat center / cover;
+}
+.err500{
+    background: url('/asset/500.png') no-repeat center / cover;
+}
+
+</style>
+<body>
+    <div class="err {{status === 404 ?'err404':'err500'}}"></div>
+</body>
+</html>
