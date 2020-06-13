@@ -5,6 +5,7 @@ const Yonch = require('youch')
 const artTemplate = require('express-art-template')
 const path = require('path')
 const bodyParser = require('body-parser')
+const favicon = require('express-favicon')
 
 // 创建应用
 const app = express()
@@ -30,7 +31,7 @@ app.use(bodyParser.json())
 // 设置对象格式的请求体内容
 app.use(bodyParser.urlencoded({extended:false})) 
 // 设置网站的图标
-
+app.use(favicon(path.join(__dirname,'favicon.ico')))
 
 // 设置路由
 
