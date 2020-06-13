@@ -6,12 +6,21 @@ const artTemplate = require('express-art-template')
 const path = require('path')
 const bodyParser = require('body-parser')
 const favicon = require('express-favicon')
+const fs = require('fs')
+const morgan = require('morgan')
 
 // 创建应用
 const app = express()
 app.listen(3000, () => {
     console.log("==start serve==")
 })
+// log collection
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+ 
+// setup the logger
+app.use(morgan('combined', { stream: accessLogStream }))
+
 
 // 中间件
 app.engine('art', artTemplate)

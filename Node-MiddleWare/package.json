@@ -17,6 +17,7 @@
     "express-art-template": "^1.0.1",
     "express-favicon": "^2.0.1",
     "http-errors": "^1.7.3",
+    "morgan": "^1.10.0",
     "youch": "^2.0.10"
   }
 }
