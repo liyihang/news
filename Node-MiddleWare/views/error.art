@@ -14,10 +14,10 @@
     left:0;
 }
 .err404{
-    background: url('/asset/404.png') no-repeat center / cover;
+    background: url('/assets/404.png') no-repeat center / cover;
 }
 .err500{
-    background: url('/asset/500.png') no-repeat center / cover;
+    background: url('/assets/500.png') no-repeat center / cover;
 }
 
 </style>

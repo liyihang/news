@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 const favicon = require('express-favicon')
 const fs = require('fs')
 const morgan = require('morgan')
+const router = require('./router')
 
 // 创建应用
 const app = express()
@@ -43,7 +44,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 app.use(favicon(path.join(__dirname,'favicon.ico')))
 
 // 设置路由
-
+app.use(router)
 
 // 404 错误处理  
 app.use((req, res, next) => {
