@@ -1,4 +1,11 @@
 // 首页 业务逻辑
-exports.index=(req,res,next)=>{
-    res.render('home')
+const homeSlides = require('../models/home')
+exports.index = (req, res, next) => {
+    homeSlides.getSlides().then(data => {
+        console.log(data)
+        res.render('home')
+
+    }).catch(err=>{
+        next(err)
+    })
 }
