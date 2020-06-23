@@ -9,6 +9,7 @@ const favicon = require('express-favicon')
 const fs = require('fs')
 const morgan = require('morgan')
 const router = require('./router')
+const middleware = require('./middleware')
 
 // 创建应用
 const app = express()
@@ -43,6 +44,9 @@ app.use(bodyParser.urlencoded({extended:false}))
 // 设置网站的图标
 app.use(favicon(path.join(__dirname,'favicon.ico')))
 
+// 自定义中间件
+
+app.use(middleware.golbal)
 // 设置路由
 app.use(router)
 
