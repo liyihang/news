@@ -460,19 +460,19 @@ ul.brand-list li {
 }
 
 .picDl {
-	position: absolute;
+	/* position: absolute;
 	top: 0;
-	left: 0;
+	left: 0; */
 	overflow: hidden;
 	margin: 0;
-	width: 75pc;
+	width: 150px;
 	height: 250px;
 	zoom: 1;
 }
 
 .picDl dd {
 	float: left;
-	display: inline;
+	display: contents;
 	overflow: hidden;
 }
 

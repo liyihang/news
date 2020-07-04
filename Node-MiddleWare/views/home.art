@@ -14,16 +14,14 @@
         <!--banner轮播-->
         <div id="banner" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
           <ol class="carousel-indicators">
-            <li data-target="#banner" data-slide-to="0" class="active"></li>
-            <li data-target="#banner" data-slide-to="1"></li>
-            <li data-target="#banner" data-slide-to="2"></li>
-            <li data-target="#banner" data-slide-to="3"></li>
+          {{each slides}}
+            <li data-target="#banner" data-slide-to="{{$index}}" class="{{$index===0?'active':''}}"></li>
+          {{/each}}
           </ol>
           <div class="carousel-inner">
-            <div class="item active"><a href="#"><img src="uploads/banner1.jpg"></a></div>
-            <div class="item"><a href="#"><img src="uploads/banner2.jpg"></a></div>
-            <div class="item"><a href="#"><img src="uploads/banner3.jpg"></a></div>
-            <div class="item"><a href="#"><img src="uploads/banner4.jpg"></a></div>
+          {{each slides}}
+            <div class="item {{$index===0?'active':''}}"><a href="#"><img src="{{$value.image}}"></a></div>
+           {{/each}}
           </div>
           <a href="#banner" data-slide="prev" class="carousel-control left">‹</a>
           <a href="#banner" data-slide="next" class="carousel-control right">›</a>
@@ -95,58 +93,20 @@
         <h3 class="fl">猜你喜欢</h3>
         <a href="#" class="fr tip changeBnt" id="xxlChg"><i></i>换一换</a>
       </div>
-      <!-- <div class="bd">
+      <div class="bd">
         <ul class="clearfix yui3-g Favourate picLB" id="picLBxxl">
+        {{each likeProducts item i }}
           <li class="yui3-u-1-6">
             <dl class="picDl huozhe">
               <dd>
-                <a href="item.html" class="pic"><img src="uploads/like_01.png"></a>
-                <div class="like-text"><p>阳光美包新款单肩包女包时尚子母包四件套女</p><h3>¥116.00</h3></div>
+                <a href="item/{{item.id}}" class="pic"><img src="{{item.thumbnail}}"></a>
+                <div class="like-text"><p>{{item.name}}</p><h3>¥{{item.price}}</h3></div>
               </dd>
             </dl>
           </li>
-          <li class="yui3-u-1-6">
-            <dl class="picDl jilu">
-              <dd>
-                <a href="item.html" class="pic"><img src="uploads/like_02.png"></a>
-                <div class="like-text"><p>爱仕达 30CM炒锅不粘锅NWG8330E电磁炉炒</p><h3>¥116.00</h3></div>
-              </dd>
-            </dl>
-          </li>
-          <li class="yui3-u-1-6">
-            <dl class="picDl tuhua">
-              <dd>
-                <a href="item.html" class="pic"><img src="uploads/like_03.png"></a>
-                <div class="like-text"><p>捷波朗 </p><p>（jabra）BOOSI劲步</p><h3>¥236.00</h3></div>
-              </dd>
-            </dl>
-          </li>
-          <li class="yui3-u-1-6">
-            <dl class="picDl huozhe">
-              <dd>
-                <a href="item.html" class="pic"><img src="uploads/like_04.png"></a>
-                <div class="like-text"><p>阳光美包新款单肩包女包时尚子母包四件套女</p><h3>¥116.00</h3></div>
-              </dd>
-            </dl>
-          </li>
-          <li class="yui3-u-1-6">
-            <dl class="picDl jilu">
-              <dd>
-                <a href="item.html" class="pic"><img src="uploads/like_05.png"></a>
-                <div class="like-text"><p>捷波朗 </p><p>（jabra）BOOSI劲步</p><h3>¥236.00</h3></div>
-              </dd>
-            </dl>
-          </li>
-          <li class="yui3-u-1-6">
-            <dl class="picDl tuhua">
-              <dd>
-                <a href="item.html" class="pic"><img src="uploads/like_06.png"></a>
-                <div class="like-text"><p>三星（G5500）</p><p>移动联通双网通</p><h3>¥566.00</h3></div>
-              </dd>
-            </dl>
-          </li>
+        {{/each}}
         </ul>
-      </div> -->
+      </div>
     </div>
   </div>
 
