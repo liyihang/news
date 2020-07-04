@@ -2,6 +2,7 @@
 const homeModel = require('../models/home')
 const productModel = require('../models/product')
 
+
 exports.index = (req, res, next) => {
     // homeModel.getSlides().then(data => {
     //     console.log(data)
@@ -24,9 +25,12 @@ exports.index = (req, res, next) => {
     // 它会把iterable里第一个触发失败的promise对象的错误信息作为它的失败错误信息。
     // Promise.all方法常被用于处理多个promise对象的状态集合。
     // 相反的Promise.race(iterable)是一旦有成功的就执行
-    Promise.all([homeModel.getSlides(),productModel.getLikeProduct()]).then(results=>{
+    Promise.all([homeModel.getSlides(), productModel.getLikeProduct()]).then(results => {
         res.locals.slides = results[0]
         res.locals.likeProducts = results[1]
         res.render('home')
-    }).catch(err=>next(err))
+    }).catch(err => next(err))
+}
+exports.like = (req, res, next) => {
+    productModel.getLikeProduct().then(data => res.json(data)).catch(err => next(err))
 }

@@ -5,8 +5,10 @@ const home = require('./controllers/home')
 const account = require('./controllers/account')
 
 
-
+// 猜你喜欢的数据
 router.get('/',home.index)
+// 换一换猜你喜欢的数据
+router.get('/like',home.like)
 router.get('/login',account.login)
 
 module.exports = router
